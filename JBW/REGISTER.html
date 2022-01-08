@@ -9,6 +9,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="Register_js.js"></script>
         <span class="border-bottom"></span>
     </head>
 
@@ -27,16 +28,16 @@
                         <label for="fpass"> Password: </label>
                     </div>
                     <div class="coord7">
-                        <input type="text" id="fpass" name="fpass" placeholder="Enter Password" size="25">
+                        <input type="password" id="fpass" name="fpass" placeholder="Enter Password" size="25">
                     </div>
                     <div class="coord7_1">
                         <label for="fcpass"> Confirm Password: </label>
                     </div>
                     <div class="coord7_2">
-                        <input type="text" id="fcpass" name="fcpass" placeholder="Enter Password" size="25">
+                        <input type="password" id="fcpass" name="fcpass" placeholder="Enter Password" size="25">
                     </div>
                     <div class="coord9">
-                        <a href="LOGIN.html"><b1 class="button1">Sign up</b1></a>
+                        <input type="button" onclick="register()" value="Sign Up" class="button1">
                     </div>
                     <div class="coord10">
                         <h2 style="font-size: 15pt">Already have an account?</h2>
