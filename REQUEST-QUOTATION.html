@@ -1,65 +1,167 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src ="JS_request.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
     <style>
-    .dropbtn {
-        cursor: pointer;
-    }
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
 
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
+        body {
+            background-image: url(image.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+        }
 
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        z-index: 1;
-    }
+        .navbar-nav{
+            text-align: right;
+            margin-right: 20;
+            
+        }
+        .navbar .navbar-brand{
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+            -webkit-text-fill-color: rgb(255, 255, 255);
+            -webkit-text-stroke-width:.5px;
+        }
+        .navbar .navbar-toggler{
+            color:rgb(255, 255, 255);
+        }
+        .navbar-brand img{
+            width: 80px;
+            height: 70px;
+            margin-top: 2px;
+            margin-right: 20px;
+            color: white;
+            font-size: 20px;
+        }
+        .navbar{
+            background-color: #0f617a! important;
+            z-index: 2;
+        }
+        .navbar .navbar-nav li a{
+            color: #fff;
+        }
+        .nav-link{
+            font-size: 20px;
+            margin: 3px;
+            color: white;
+            font-weight: 500;
+            z-index: 1;
 
-    .dropdown-content a {
-        display: block;
-    }
+        }
+        .van:hover{
+            font-weight: 600;
+            border: 1px solid #fff;
+            border-width: auto;
 
-    .dropdown a:hover {background-color: #ddd;}
+            
+        }
+        .navbar .nav-item .dropdown-menu .dropdown-item:hover{
+            color : rgb(0, 0, 0)! important;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #fff;
+            opacity: 1;
+            transition: .2s ease-in;
+            
+        }
+        .navbar .nav-item .dropdown-menu {
+            color : rgb(0, 0, 0)! important;
+            background-color: rgb(0, 0, 0);
+            border: 1px solid #fff;
+            opacity: 1;
+            transition: .2s ease-in;
+        }
 
-.show {display: block;}
+        .nav-item-dropdown{
+            background-color: rgb(255, 255, 255);
+            transition: .2s ease-in;
+            
+
+        }
+
+        @media screen and (max-width: 1219px){
+            .name{
+            display: none!important;
+        }
+        }
+
     </style>
 
     <body>
-            <h1>PME FILE MANAGEMENT SYSTEM</h1>
-            <h1> REQUEST QUOTATION </h1>
-            <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Menu</button>
-            <div id="Choices1" class="dropdown-content">
-                <a href="#Delivery">Delivery</a>
-                <a href="#Tools">Tools</a>
+        <div class="menu-bar">
+            <nav class="navbar navbar-expand-lg navbar-dark stic">
+                <a class="navbar-brand"><img src="LOGO.png"></a>
+                <a class="navbar-brand custom-brand name" style="text-align: left;">JBW FILE MANAGEMENT SYSTEM</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <li class="nav-item">
+                            <a class="nav-link van" href="Delivery.html">Delivery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link van" href="Tools.html">Tools</a>
+                        </li>
+                    </li>      
+                </div>
+            </nav>
+          </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-1 ml-2 mt-2">
+                    <a href="Main Window.html"><img src="21.png" style="height: 70px;"/></a>
+                </div>
+                <div class="card col-md-7 mt-3 mx-auto p-0" style="height: 750px; border-radius: 10px; box-shadow: 0px 0px 10px 0px #000; font-weight: bold;">
+                    <div class="card-header">
+                        <div class="text-center">
+                            REQUEST QUOTATION
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Company Name:</label>
+                                <input type="email" class="form-control mx-auto" onkeypress="letter1(event)" id="input1" placeholder="Enter Company Name">
+                                <label for="exampleInputEmail1">Address:</label>
+                                <input type="email" class="form-control" id="input2" placeholder="Enter Address">
+                                <label for="exampleInputEmail1">Purchasing Officer:</label>
+                                <input type="email" class="form-control" onkeypress="letter2(event)" id="input3" placeholder="Enter Purchasing Officer">
+                                <label for="exampleInputEmail1">Engineer-In-Charge:</label>
+                                <input type="email" class="form-control" onkeypress="letter3(event)" id="input4" placeholder="Enter Engineer-In-Charge">
+                                <label for="exampleInputEmail1">Subject:</label>
+                                <input type="email" class="form-control" id="input5" placeholder="Enter Subject">
+                                <label for="exampleInputEmail1">Project Name:</label>
+                                <input type="email" class="form-control" id="input6" placeholder="Enter Project Name">
+                                <label for="exampleInputEmail1">Price:</label>
+                                <input type="text" class="form-control" onkeypress="number(event)" id="input7" placeholder="Enter Price">
+                                <label for="exampleInputEmail1">Terms of Project:</label>
+                                <input type="email" class="form-control" id="input8" placeholder="Enter Terms of Project">
+                                <div class="row">
+                                    <div class="col-sm-9"></div>
+                                    <button type="button" class="btn btn-primary col-sm-2 mt-5" id="button" onclick="error()">Submit</b1>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-        <script>
-        function myFunction(){
-            document.getElementById("Choices1").classList.toggle("show");
-            }   
-        </script>
-            <fieldset>
-            <label for="fuser"> Customer Name: </label>
-            <input type="text" id="fuser" name="fuser" placeholder="Enter Name"> <br>
-            <label for="fpass"> Address: </label>
-            <input type="text" id="fpass" name="fpass" placeholder="Enter Address"> <br>
-            <label for="fpass"> Purchasing Customer: </label>
-            <input type="text" id="fpass" name="fpass" placeholder="Enter Purchase"> <br>
-            <label for="fpass"> Engineering-in-Charge: </label>
-            <input type="text" id="fpass" name="fpass" placeholder="Enter Engineer"> <br>
-            <label for="fpass"> Subject: </label>
-            <input type="text" id="fpass" name="fpass" placeholder="Enter Subject"> <br>
-            <label for="fpass"> Project name: </label>
-            <input type="text" id="fpass" name="fpass" placeholder="Enter Project name"> <br>
-            <label for="fpass"> Price: </label>
-            <input type="text" id="fpass" name="fpass" placeholder="Enter Price"> <br>
-            <label for="fpass"> Terms of project: </label>
-            <input type="text" id="fpass" name="fpass" placeholder="Enter Terms of Project"> <br>
-            <input type="submit" value="Submit">
-        </fieldset>
-        </form>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>
