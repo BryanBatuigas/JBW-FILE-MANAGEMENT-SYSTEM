@@ -5,8 +5,19 @@ function sendMail(params) {
 		subject:document.getElementById("sub").value,
 		message:document.getElementById("msg").value,
 	};
-	emailjs.send('service_9mzjoac', 'template_110rix7', tempParams)
-	.then((message) => alert("Mail sent succesfully"));
+
+	var userval = confirm("Are you sure you want to submit?");
+    if(userval == true){
+		emailjs.send('service_9mzjoac', 'template_110rix7', tempParams)
+		.then((message) => alert("Mail sent succesfully"));
+
+		document.getElementById("from_email").value = null;
+		document.getElementById("to_email").value = null;
+		document.getElementById("sub").value = null;
+		document.getElementById("msg").value = null;
+		
+	}
 	
-	document.querySelector("contact-form").reset();
+
+
 	}
