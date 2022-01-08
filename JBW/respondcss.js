@@ -7,4 +7,6 @@ function sendMail(params) {
 	};
 	emailjs.send('service_9mzjoac', 'template_110rix7', tempParams)
 	.then((message) => alert("Mail sent succesfully"));
+	
+	document.querySelector("contact-form").reset();
 	}
