@@ -15,15 +15,15 @@ function sendMail(params) {
     {
         alert("Please fill up the Sender Email!");
     }
-	else if(name2.value =="")
+	else if(name2.value == "")
     {
         alert("Please fill up the Receiver Email!");
     }
-    else if(name3.value="")
+    else if(name3.value == "")
     {
         alert("Please fill up the Subject!");
     }
-    else if(name4.value== "")
+    else if(name4.value == "")
     {
         alert("Please fill up the Message!");
     }
