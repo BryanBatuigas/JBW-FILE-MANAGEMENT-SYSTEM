@@ -22,7 +22,9 @@ function sendMail(params) {
 	{
 		alert("Please fill up the Message ");
 	}
-
+	else
+	{
+				
 	var userval = confirm("Are you sure you want to submit?");
     if(userval == true){
 		emailjs.send('service_9mzjoac', 'template_110rix7', tempParams)
@@ -33,6 +35,8 @@ function sendMail(params) {
 		document.getElementById("sub").value = null;
 		document.getElementById("msg").value = null;
 		
+	}
+
 	}
 	
 
