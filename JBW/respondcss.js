@@ -6,7 +6,7 @@ function sendMail(params) {
 		message:document.getElementById("msg").value,
 	};
 
-	if(from_name == "" || to_name == "" || subject == "" || message == "")
+	if(from_name.value == "" || to_name.value == "" || subject.value == "" || message.value == "")
 	{
 		alert("Please complete the form!");
 	}
