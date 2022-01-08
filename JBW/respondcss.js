@@ -6,11 +6,28 @@ function sendMail(params) {
 		message:document.getElementById("msg").value,
 	};
 
-	if(from_name.value == "" || to_name.value == "" || subject.value == "" || message.value == "")
-	{
-		alert("Please complete the form!");
-	}
-	else
+    var name = document.getElementById("from_email");
+    var name2 = document.getElementById("to_email");
+    var name3 = document.getElementById("sub");
+    var name4 = document.getElementById("msg");
+    
+    if(name.value == "")
+    {
+        alert("Please fill up the Sender Email!");
+    }
+	else if(name2.value =="")
+    {
+        alert("Please fill up the Receiver Email!");
+    }
+    else if(name3.value="")
+    {
+        alert("Please fill up the Subject!");
+    }
+    else if(name4.value== "")
+    {
+        alert("Please fill up the Message!");
+    }
+    else
 	{
 		var userval = confirm("Are you sure you want to submit?");
 		if(userval == true){
@@ -23,10 +40,8 @@ function sendMail(params) {
 			document.getElementById("msg").value = null;
 			
 		}
-		
-	
+
 
 	}
-
 
 	}
