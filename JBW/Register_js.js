@@ -32,7 +32,7 @@
             document.getElementById("fuser").value ="";
             document.getElementById("fpass").value="";
             document.getElementById("fcpass").value="";
-            window.location = "LOGIN.html";
+            window.location = "Login.html";
         }
         else{
             alert(email + " is already register.");

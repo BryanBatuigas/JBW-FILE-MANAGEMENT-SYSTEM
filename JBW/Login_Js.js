@@ -29,7 +29,7 @@ function login(){
 
         document.getElementById("fuser").value ="";
         document.getElementById("fpass").value="";
-        window.location = "MAIN WINDOW.html";
+        window.location = "Main Window.html";
     }
 }
 
