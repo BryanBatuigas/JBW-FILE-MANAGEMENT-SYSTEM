@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
     <meta charset="utf-8">
@@ -114,7 +116,7 @@ body {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="EMAIL.html"><i class="fas fa-sync-alt mr-1" style="font-size: 36px"></i></a>
+                    <a href="EMAIL.php"><i class="fas fa-sync-alt mr-1" style="font-size: 36px"></i></a>
                 </li>
                 <li class="nav-item">
                     <a href="#"><i class="far fa-bell mr-1" style="font-size: 36px"></i></a>
@@ -127,7 +129,7 @@ body {
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-1 ml-2">
-                <a href="MAIN WINDOW.html"><img src="21.png" style="height: 70px;"/></a>
+                <a href="MAIN_WINDOW.php"><img src="21.png" style="height: 70px;"/></a>
             </div>
             <div class="container">
                 <div class="row p-0 p-sm-1 p-md-2 p-lg-4">

@@ -1,5 +1,35 @@
+<?php
+include 'connect.php';
+if(isset($_POST['submit'])){
+    $date = $_POST['date'];
+    $company_name = $_POST['company_name'];
+    $address = $_POST['address'];
+    $purchasing_officer = $_POST['purchasing_officer'];
+    $eic = $_POST['eic'];
+    $subject = $_POST['subject'];
+    $project_name = $_POST['project_name'];
+    $price = $_POST['price'];
+    $top = $_POST['top'];
+
+    $sql="insert into `crud`(date, company_name, address, purchasing_officer, eic, subject, project_name, price, top) 
+    values('$date','$company_name', '$address', '$purchasing_officer', '$eic', '$subject', '$project_name', '$price', '$top')";
+    $result=mysqli_query($con,$sql);
+    if($result){
+        header('location:MAIN_WINDOW.php');
+        // echo "Data inserted successfully";
+    }else{
+        die(mysqli_error($con));
+    }
+
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
+    <title>REQUEST</title>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -110,10 +140,10 @@
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
                         <li class="nav-item">
-                            <a class="nav-link van" href="DELIVERY.html">Delivery</a>
+                            <a class="nav-link van" href="DELIVERY.php">Delivery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link van" href="TOOLS.html">Tools</a>
+                            <a class="nav-link van" href="TOOLS.php">Tools</a>
                         </li>
                     </li>      
                 </div>
@@ -122,39 +152,60 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-1 ml-2 mt-2">
-                    <a href="MAIN WINDOW.html"><img src="21.png" style="height: 70px;"/></a>
+                    <a href="MAIN_WINDOW.php"><img src="21.png" style="height: 70px;"/></a>
                 </div>
-                <div class="card col-md-7 mt-3 mx-auto p-0" style="height: 750px; border-radius: 10px; box-shadow: 0px 0px 10px 0px #000; font-weight: bold;">
+                <div class="card col-md-7 mt-3 mx-auto p-0" style="height: 900px; border-radius: 10px; box-shadow: 0px 0px 10px 0px #000; font-weight: bold;">
                     <div class="card-header">
                         <div class="text-center">
                             REQUEST QUOTATION
                         </div>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form method="POST">
+                            <div class="container">
+                            <form>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Company Name:</label>
-                                <input type="email" class="form-control mx-auto" onkeypress="letter1(event)" id="input1" placeholder="Enter Company Name">
-                                <label for="exampleInputEmail1">Address:</label>
-                                <input type="email" class="form-control" id="input2" placeholder="Enter Address">
-                                <label for="exampleInputEmail1">Purchasing Officer:</label>
-                                <input type="email" class="form-control" onkeypress="letter2(event)" id="input3" placeholder="Enter Purchasing Officer">
-                                <label for="exampleInputEmail1">Engineer-In-Charge:</label>
-                                <input type="email" class="form-control" onkeypress="letter3(event)" id="input4" placeholder="Enter Engineer-In-Charge">
-                                <label for="exampleInputEmail1">Subject:</label>
-                                <input type="email" class="form-control" id="input5" placeholder="Enter Subject">
-                                <label for="exampleInputEmail1">Project Name:</label>
-                                <input type="email" class="form-control" id="input6" placeholder="Enter Project Name">
-                                <label for="exampleInputEmail1">Price:</label>
-                                <input type="text" class="form-control" onkeypress="number(event)" id="input7" placeholder="Enter Price">
-                                <label for="exampleInputEmail1">Terms of Project:</label>
-                                <input type="email" class="form-control" id="input8" placeholder="Enter Terms of Project">
-                                <div class="row">
-                                    <div class="col-sm-9"></div>
-                                    <button type="button" class="btn btn-primary col-sm-2 mt-5" id="button" onclick="error()">Submit</b1>
-                                    <div class="col-sm-1"></div>
-                                </div>
+                                <label>Date</label>
+                                <input type="date" class="form-control" placeholder="Enter Date today" name="date" autocomplete="off">
                             </div>
+                            <div class="form-group">
+                                <label>Company Name</label>
+                                <input type="text" class="form-control" placeholder="Enter Your Company Name" name="company_name" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <input type="text" class="form-control" placeholder="Enter Your Company Address" name="address"autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label>Purchasing Officer</label>
+                                <input type="text" class="form-control" placeholder="Enter Purchasing Officer " name="purchasing_officer"autocomplete="off" >
+                            </div>
+                            <div class="form-group">
+                                <label>Engineer In Charge</label>
+                                <input type="text" class="form-control" placeholder="Enter Engineer In Charge" name="eic"autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <input type="text" class="form-control" placeholder="Enter Subject" name="subject"autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label>Project Name</label>
+                                <input type="text" class="form-control" placeholder="Enter Project Name" name="project_name"autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label>Price</label>
+                                <input type="number" class="form-control" placeholder="Enter Price" name="price"autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label>Terms Of Payment</label>
+                                <input type="text" class="form-control" placeholder="Enter Terms of Payment" name="top"autocomplete="off">
+                            </div>
+
+                            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                            </form>
+ 
+                           
+                            
                         </form>
                     </div>
                 </div>

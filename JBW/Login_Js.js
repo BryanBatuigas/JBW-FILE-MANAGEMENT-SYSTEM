@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var usernameArray = ["user", "Jatsen Gesta", "Wendell Magdaluyo", "Bryan Batuigas"];
 var passwordArray = ["user", "123456", "123456", "123456"];
 
@@ -29,7 +30,7 @@ function login(){
 
         document.getElementById("fuser").value ="";
         document.getElementById("fpass").value="";
-        window.location = "MAIN WINDOW.html";
+        window.location = "MAIN_WINDOW.php";
     }
 }
 
@@ -41,3 +42,48 @@ document.getElementById('show').onclick = function() {
     }
 };
 
+=======
+var usernameArray = ["user", "Jatsen Gesta", "Wendell Magdaluyo", "Bryan Batuigas"];
+var passwordArray = ["user", "123456", "123456", "123456"];
+
+function login(){
+
+    var username = document.getElementById("fuser").value;
+    var password = document.getElementById("fpass").value;
+
+    var i = usernameArray.indexOf(username);
+
+    if(usernameArray.indexOf(username) == -1){
+        if (username == ""){
+            alert("Username required.");
+            return ;
+        }
+        alert("Username does not exist.");
+        return ;
+    }
+    else if(passwordArray[i] != password){
+        if (password == ""){
+            alert("Password required.");
+            return ;
+        }
+        alert("Password does not match.");
+        return ;
+    }
+    else {
+        alert(username + " you are login Now \n welcome to our website.");
+
+        document.getElementById("fuser").value ="";
+        document.getElementById("fpass").value="";
+        window.location = "Main Window.html";
+    }
+}
+
+document.getElementById('show').onclick = function() {
+    if ( this.checked ) {
+       document.getElementById('fpass').type = "text";
+    } else {
+       document.getElementById('fpass').type = "password";
+    }
+};
+
+>>>>>>> 6d2939703b421d1c0b6de758b25d38954b11be51
